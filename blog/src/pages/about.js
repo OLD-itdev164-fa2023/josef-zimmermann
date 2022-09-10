@@ -1,8 +1,9 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from 'react'
+import { Link } from 'gatsby'
+import { graphql } from 'gatsby'
+import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from '../components/layout'
-import Image from '../components/image'
 import SEO from '../components/seo'
 
 const About = ({ data }) => {
@@ -11,11 +12,18 @@ const About = ({ data }) => {
         <Layout>
             <SEO title="About" />
             <h1>About Us</h1>
-            <p>{`${company} was started by ${name} in 2020.`}</p>
+            <p>{`${company} was started by ${name} in 2020`}</p>
             <p>{`At ${company} we just make blogs!`}</p>
 
             <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-                <Image />
+                <StaticImage
+                    src="../images/charizard.png"
+                    width = {300}
+                    quality={95}
+                    formats={["auto","webp", "avif"]}
+                    alt="A Gatsby Astronaut"
+                    style={{ marginBottom: `1.45rem` }}
+                    />
             </div>
             <Link to="/">Home</Link>
         </Layout>
@@ -25,14 +33,15 @@ const About = ({ data }) => {
 export default About 
 
 export const query = graphql`
-query {
-    site {
-        siteMetadata {
-            conatct {
-                name
-                company
+    query {
+        site {
+            siteMetadata {
+                contact {
+                    name
+                    company
+                    address
+                }
             }
         }
     }
-}
 `

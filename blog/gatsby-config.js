@@ -1,14 +1,14 @@
 module.exports = {
-  siteMetadata: {
+  siteMetadata: { 
     title: `Gatsby Blog`,
     description: `ITDEV-164 Gatsby Blog`,
     author: `Joe Zimmermann`,
+    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
     contact: {
       name: `Joe Zimmermann`,
       company: `Blogs Inc.`,
       address: `PO Box 1234`
-    },
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    }
   },
   plugins: [
     `gatsby-plugin-image`,
