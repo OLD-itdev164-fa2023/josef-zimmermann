@@ -13,6 +13,13 @@ module.exports = {
   plugins: [
     `gatsby-plugin-image`,
     {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `5um48dxh2rqp`,
+        accessToken: `tVi91RCDnpg7ETMIotemARmVHy5wrjkIEZ7eQ5hMQ2A`
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
